@@ -10,8 +10,8 @@ var sname;
 
 $(document).ready(function () {
     console.log("page ready");
-    //this might be the problem running direct
-    nao.init(window.location.host);
+//this might be the problem running direct
+    nao.init("localhost");
 
     $('#DivTts').show(300);
     $('#DivSys').show(300);
@@ -69,7 +69,7 @@ $(document).ready(function () {
         }
     });
 
-
+    
 
 
 });
@@ -90,45 +90,9 @@ function move_head() {
     nao.motion.angleInterpolation(names, angles, times, true).then(move_head)
 }
 
-
-
 function displayVideo() {
     nao.motion.setStiffnesses('Head', 1.0)
-     $('#BtnVid').hide(300);
-     $('#DivVid1').show(300);
-     $('#DivVid2').show(300);
-     //$("#myCanvas0").mousemove(function (e) {
-      //   coords.x = e.pageX - $(this).offset().left;
-       //  coords.y = e.pageY - $(this).offset().top;
-     //});
-     //move_head();
-
-
-
-    // var subscriberID = nao.video.subscribeCamera(
-    //     'pepper_top_camera', // Name of the subscriber
-    //     0,                   // Camera index (0 for top camera)
-    //     2,                   // Resolution (2 for 640x480)
-    //     11,                  // Color space (11 for RGB)
-    //     30                   // Frame rate
-    // );
-
-    // // Get the video stream
-    // nao.video.getImageRemote(subscriberID).then(function (image) {
-    //     // Process the image data
-    //     var imageData = 'data:image/jpeg;base64,' + image[6];
-    //     var imgElement = document.getElementById('pepperVideo');
-    //     imgElement.src = imageData;
-
-    //     // Unsubscribe from the camera
-    //     nao.video.unsubscribe(subscriberID);
-    // }).catch(function (error) {
-    //     console.error('Error getting image:', error);
-    // });
-
-
-    nao.motion.setStiffnesses('Head', 1.0)
-     $('#BtnVid').hide(300);
+    $('#BtnVid').hide(300);
     $('#DivVid1').show(300);
     $('#DivVid2').show(300);
     $("#myCanvas0").mousemove(function (e) {
@@ -141,14 +105,7 @@ function displayVideo() {
         t[String.fromCharCode(i)] = i;
     }
     var z = Math.floor((Math.random() * 10000) + 1);
-    var cameras = nao.video.getCameraIndexes();
-    console.log(nao.video.getCameraIndexes());
-    for(var i=0; i<4;i++){
-        console.log(nao.video.getCameraName(i));
-    }
-
-
-    nao.video.subscribeCameras("test_z" + z, [0, 1], [2, 2], [11, 11], 30).then(subscribed_video)
+    nao.video.subscribeCameras("test_z" + z, [0, 1], [0, 0], [11, 11], 30).then(subscribed_video)
 }
 
 function subscribed_video(name) {
@@ -164,8 +121,8 @@ function image_remote(data) {
         var imgData = data[0];
         if (imgData.length > 6) {
             var idCanvas = 'myCanvas0';
-            var imgWidth = imgData[1];
-            var imgHeight = imgData[0];
+            var imgWidth = imgData[0];
+            var imgHeight = imgData[1];
             var imgBase64 = imgData[6];
             display_image(idCanvas, imgWidth, imgHeight, imgBase64);
         }
@@ -174,8 +131,8 @@ function image_remote(data) {
         var imgData = data[1];
         if (imgData.length > 6) {
             var idCanvas = 'myCanvas1';
-            var imgWidth = imgData[1];
-            var imgHeight = imgData[0];
+            var imgWidth = imgData[0];
+            var imgHeight = imgData[1];
             var imgBase64 = imgData[6];
             display_image(idCanvas, imgWidth, imgHeight, imgBase64);
         }
@@ -206,48 +163,38 @@ function display_image(idCanvas, imgWidth, imgHeight, imgBase64) {
     // var imageUrl = urlCreator.createObjectURL( blob );
     // var img = document.querySelector( "#photo" );
     // img.src = imageUrl;
-
-    var imgDiv = document.getElementById('DivVid1');
-    imgDiv.style.height = '480px';
-    imgDiv.style.width = '640px';
-
-    var imageData = 'data:image/jpeg;base64,' + imgBase64[6];
-    var imgElement = document.getElementById('pepperVideo');
-    imgElement.style.height = '480px';
-    imgElement.style.width = '640px';
-    imgElement.src = imageData;
-    // var canvas = document.getElementById(idCanvas);
+    var canvas = document.getElementById(idCanvas);
 
 
 
-    // var ctx = canvas.getContext('2d');
+    var ctx = canvas.getContext('2d');
 
-    // var drawArray = function (arr, width, height) {
-    //     // set your canvas width/height
-    //     canvas.width = width;
-    //     canvas.height = height;
+    var drawArray = function (arr, width, height) {
+        // set your canvas width/height
+        canvas.width = width;
+        canvas.height = height;
 
-    //     // create the imageData object, you'll need the width and height of your image
-    //     var dataImage = ctx.createImageData(width, height);
-    //     // browsers supporting TypedArrays
-    //     if (dataImage.data.set) {
-    //         dataImage.data.set(arr);
-    //     } else {
-    //         // IE9
-    //         arr.forEach(function (val, i) {
-    //             dataImage.data[i] = val;
-    //         });
-    //     }
-    //     ctx.putImageData(dataImage, 0, 0);
-    // };
+        // create the imageData object, you'll need the width and height of your image
+        var dataImage = ctx.createImageData(width, height);
+        // browsers supporting TypedArrays
+        if (dataImage.data.set) {
+            dataImage.data.set(arr);
+        } else {
+            // IE9
+            arr.forEach(function (val, i) {
+                dataImage.data[i] = val;
+            });
+        }
+        ctx.putImageData(dataImage, 0, 0);
+    };
 
 
-    // drawArray(imgBase64, imgWidth, imgHeight);
+    drawArray(imgBase64, imgWidth, imgHeight);
 }
 
 function selectBehaviour() {
     document.getElementById("myDropdown").classList.toggle("show");
-    getBehaviours();
+    //getBehaviours();
 
 
 }
@@ -269,19 +216,20 @@ function filterFunction() {
 }
 
 var randomCall
-function startRandomBehaviour() {
+function startRandomBehaviour(){
     getBehaviours();
     console.log("random start");
     randomCall = setInterval(callRandomBehaviour, 30000);
 
 }
-function stopRandomBehaviour() {
+function stopRandomBehaviour(){
     console.log("random stop");
     clearInterval(randomCall);
 }
 
-function callRandomBehaviour() {
-    nao.behaviourManager.getInstalledBehaviors().then(function (data) {
+function callRandomBehaviour(){
+    nao.behaviourManager.getInstalledBehaviors().then(function (data) 
+    {
         var b = getRandomInt(data.length - 1);
         console.log(data[b]);
         nao.behaviourManager.runBehavior(data[b]);
@@ -292,39 +240,31 @@ function callRandomBehaviour() {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-}
+  }
 
-var alreadyran = false;
 function getBehaviours() {
-
-
     console.log("getBehaviours")
-    if (!alreadyran) {
-        nao.behaviourManager.getInstalledBehaviors().then(function (data) {
-            for (let i = 0; i < data.length; i++) {
-                $('#myDropdown').append("<a class='behaviourLink'>" + data[i] + "</a>");
-
-                if (data[i].startsWith("animations/Stand/Gestures/")) {
-
-                    $('#gestures').append("<button class='behaviourLink gesture' >" + data[i] + "</button>");
-                }
-                if (data[i].startsWith("animations/Stand/Reactions/")) {
-                    $('#reactions').append("<button class='behaviourLink reaction'>" + data[i] + "</button>");
-                }
-                if (data[i].startsWith("animations/Stand/Waiting/")) {
-                    $('#waiting').append("<button class='behaviourLink waiting'>" + data[i] + "</button>");
-                }
+    nao.behaviourManager.getInstalledBehaviors().then(function (data) {
+        for (let i = 0; i < data.length; i++) {
+            $('#myDropdown').append("<a class='behaviourLink'>" + data[i] + "</a>");
+            
+            if (data[i].startsWith("animations/Stand/Gestures/")) {
+                $('#gestures').append("<button class='behaviourLink'>" + data[i] + "</button>");
             }
-            $('.behaviourLink').click(function () {
-                console.log($(this)[0])
-                console.log($(this)[0].innerText)
-                nao.behaviourManager.runBehavior($(this)[0].innerText);
-            })
-
+            if (data[i].startsWith("animations/Stand/Reactions/")) {
+                $('#reactions').append("<button class='behaviourLink'>" + data[i] + "</button>");
+            }
+            if (data[i].startsWith("animations/Stand/Waiting/")) {
+                $('#waiting').append("<button class='behaviourLink'>" + data[i] + "</button>");
+            }
+        }
+        $('.behaviourLink').click(function () {
+            console.log($(this)[0])
+            console.log($(this)[0].innerText)
+            nao.behaviourManager.runBehavior($(this)[0].innerText);
         })
-    }
-    alreadyran = true;
 
+    })
 }
 
 function runBehaviour(behaviour) {
