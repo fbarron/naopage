@@ -42,7 +42,7 @@
   /* make grid for display */
   .main-grid {
     display: grid;
-    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     align-items: start;
   }
@@ -55,9 +55,9 @@
   /* Each button grid section */
   .button-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 5px;
   }
+
 
   /* Buttons */
   button {
@@ -113,7 +113,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    align-self: start;
+    align-items: center;
   }
 
   .sidebar button {
@@ -121,6 +121,7 @@
     font-size: 18px;
     color: white;
     border-radius: 10px;
+    width: 200px;
   }
 
   .sidebar .rest { background-color: #5b84c2; }
@@ -144,8 +145,9 @@
 
   <!-- grid for controls -->
   <div class="main-grid">
+    
     <!-- posture controls -->
-    <fieldset id="DivPosture" class="button-grid">
+    <fieldset id="DivPosture" class="button-grid" style="grid-template-columns: repeat(5, 1fr);">
             <!-- 360 -->
             <button id="crouch" onclick="nao.spin360();">
               <div>360<div>
@@ -248,7 +250,7 @@
     </fieldset>
 
     <!-- Movement controls -->
-    <fieldset id="DivMotion" class="button-grid">
+    <fieldset id="DivMotion" class="button-grid" style="grid-template-columns: repeat(4, 1fr);">
 
      <!-- pepper  right hand controls -->
             <!-- open hand right -->
@@ -329,10 +331,9 @@
 
               <!-- slider, dont know what its for -->
               <div class="slidecontainer" style="grid-column-end: span 5;">
-                <input type="range" min="0" max="10" value="1" class="slider" id="speedSlider" style="width: 460px;">
+                <input type="range" min="0" max="10" value="1" class="slider" id="speedSlider" style="width: 400px;">
               </div>
 
-      
     </fieldset>
 
     <!-- sidebar basic pepper controls -->
