@@ -12,123 +12,8 @@
   <link rel="stylesheet" href="styles/global.css">
 </head>
 
-<style>
-  /* display of page body */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #fafafa;
-    margin: 10px;
-  }
 
-  /* Pepper speach control boxes display*/
-  .top-texts {
-    display: flex;
-    gap: 1px;
-    justify-content: space-around;
-    margin-bottom: 10px;
-  }
-
-  /* pepper speach control text display */
-  .top-texts input {
-    width: 200px;
-    height: 50px;
-    border-radius: 1px;
-    border: 1px solid #ccc;
-    text-align: left;
-    font-size: 18px;
-    padding-left: 4px;
-  }
-
-  /* make grid for display */
-  .main-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    align-items: start;
-  }
-
-  /* hides border of grid areas */
-  fieldset {
-    border: none;
-  }
-
-  /* Each button grid section */
-  .button-grid {
-    display: grid;
-    gap: 5px;
-  }
-
-
-  /* Buttons */
-  button {
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-    height: 100px;
-  }
-
-  .dropdown {
-    text-align: center;
-  }
-
-  .dropdown button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 200px;
-  }
-
-  /* button colours for left side*/
-  #DivPosture button:nth-child(1) { background-color: #c25b4e; }
-  #DivPosture button:nth-child(2) { background-color: #5b84c2; }
-  #DivPosture button:nth-child(3) { background-color: #ac21cf; }
-  #DivPosture button:nth-child(4) { background-color: #e0b66b; }
-  #DivPosture button:nth-child(5) { background-color: #9177b9; }
-  #DivPosture button:nth-child(6) { background-color: #b5569f; }
-  #DivPosture button:nth-child(7) { background-color: #66c8a7; }
-  #DivPosture button:nth-child(8) { background-color: #b95e6b; }
-  #DivPosture button:nth-child(9) { background-color: #1bdc28; }
-  #DivPosture button:nth-child(10) { background-color: #c2b776; }
-  #DivPosture button:nth-child(11) { background-color: #5e1fbc; }
-  #DivPosture button:nth-child(12) { background-color: #cf7916; }
-  #DivPosture button:nth-child(13) { background-color: #302bc7; }
-  #DivPosture button:nth-child(14) { background-color: #4ab79a; }
-  #DivPosture button:nth-child(15) { background-color: #f2db06; }
-  #DivPosture button:nth-child(16) { background-color: #83d1a1; }
-  #DivPosture button:nth-child(17) { background-color: #c36717; }
-  #DivPosture button:nth-child(18) { background-color: #724ea7; }
-  #DivPosture button:nth-child(19) { background-color: #b3e284; }
-  #DivPosture button:nth-child(20) { background-color: #ca0000; }
-
-  /* sidebar basic pepper controls */
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    align-items: center;
-  }
-
-  .sidebar button {
-    height: 80px;
-    font-size: 18px;
-    color: white;
-    border-radius: 10px;
-    width: 200px;
-  }
-
-  .sidebar .rest { background-color: #5b84c2; }
-  .sidebar .wake { background-color: #75b575; }
-  .sidebar .reboot { background-color: #e6c24d; }
-  .sidebar .off { background-color: #c25b4e; }
-</style>
+<head>
 
 <head>
   <title>Pepper Staff Control</title>
@@ -147,7 +32,7 @@
   <div class="main-grid">
     
     <!-- posture controls -->
-    <fieldset id="DivPosture" class="button-grid" style="grid-template-columns: repeat(5, 1fr);">
+  <fieldset id="DivPosture" class="button-grid grid-cols-5">
             <!-- 360 -->
             <button id="crouch" onclick="nao.spin360();">
               <div>360<div>
@@ -250,30 +135,30 @@
     </fieldset>
 
     <!-- Movement controls -->
-    <fieldset id="DivMotion" class="button-grid" style="grid-template-columns: repeat(4, 1fr);">
+  <fieldset id="DivMotion" class="button-grid grid-cols-4">
 
      <!-- pepper  right hand controls -->
             <!-- open hand right -->
             <button id="righthandopen" onclick="nao.motion.openHand('RHand');">
-                <img src="img/hand-right-open.png" style="width:60px;height:60px;" />
+                <img src="img/hand-right-open.png" class="img-60" />
                 <div>Open Hand</div>
               </button>
 
               <!-- close hand right -->
               <button id="righthandclose" onclick="nao.motion.closeHand('RHand');">
-                <img src="img/hand-right-close.png" style="width:60px;height:60px;" />
+                <img src="img/hand-right-close.png" class="img-60" />
                 <div>Close Hand</div>
         </button>   
     <!-- pepper left hand controls -->
             <!-- open hand left -->
             <button id="openhand" onclick="nao.motion.openHand('LHand');">
-                <img src="img/hand-left-open.png" style="width:60px;height:60px;" />
+                <img src="img/hand-left-open.png" class="img-60" />
                 <div>Open Hand</div>
               </button>
 
               <!-- close hand left -->
               <button id="closehand" onclick="nao.motion.closeHand('LHand');">
-                <img src="img/hand-left-close.png" style="width:60px;height:60px;" />
+                <img src="img/hand-left-close.png" class="img-60" />
                 <div>Close Hand</div>
      </button>
 
@@ -284,19 +169,19 @@
       <!-- pepper moving controls -->
                 <!-- turn left -->
               <button id="turnleft" onclick="nao.move('turnleft');">
-                <img src="img/turn-left.png" style="width:60px;height:60px;" />
+                <img src="img/turn-left.png" class="img-60" />
                 <div>turn left</div>
               </button>
 
               <!-- forward -->
               <button id="forward" onclick="nao.move('forward',speed);">
-                <img src="img/forward.png" style="width:60px;height:60px;" />
+                <img src="img/forward.png" class="img-60" />
                 <div>forward</div>
               </button>
 
               <!--  turn right -->
               <button id="turnright" onclick="nao.move('turnright');">
-                <img src="img/turn-right.png" style="width:60px;height:60px;" />
+                <img src="img/turn-right.png" class="img-60" />
                 <div>turn right</div>
               </button>
 
@@ -307,31 +192,31 @@
 
               <!-- left -->
               <button id="left" onclick="nao.move('left');">
-                <img src="img/left.png" style="width:60px;height:60px;" />
+                <img src="img/left.png" class="img-60" />
                 <div>move left</div>
               </button>
 
               <!-- back -->
               <button id="backward" onclick="nao.move('backward');">
-                <img src="img/backward.png" style="width:60px;height:60px;" />
+                <img src="img/backward.png" class="img-60" />
                 <div>backward</div>
               </button>
 
               <!-- right -->
               <button id="right" onclick="nao.move('right');">
-                <img src="img/right.png" style="width:60px;height:60px;" />
+                <img src="img/right.png" class="img-60" />
                 <div>move right</div>
               </button>
 
               <!-- stop - change image -->
               <button id="stop" onclick="nao.move('stop');">
-                <img src="img/right.png" style="width:60px;height:60px;" />
+                <img src="img/right.png" class="img-60" />
                 <div>Stop</div>
               </button>
 
               <!-- slider, dont know what its for -->
-              <div class="slidecontainer" style="grid-column-end: span 5;">
-                <input type="range" min="0" max="10" value="1" class="slider" id="speedSlider" style="width: 400px;">
+              <div class="slidecontainer span-cols-5">
+                <input type="range" min="0" max="10" value="1" class="slider slider-width-400" id="speedSlider">
               </div>
 
     </fieldset>

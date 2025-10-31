@@ -22,63 +22,63 @@
         
 
        <div>
-        <div style="display:inline-block;vertical-align:top;">
-          <div style="display:inline-block;">
-            <fieldset id="DivSys" style="display:none;text-align:center;border:none;">
-              <img id="RbtIcon" style="width:128px;height:128px;display:inline-block;" />
-              <div style="display:inline-block;">
-                <h1>Air <span style="display:none;margin:5px;padding:5px;" id="RbtName">NAO</span></h1>
-                <span style="display:none;margin:5px;padding:5px;" id="RbtVersion">Version</span>
+        <div class="display-inline v-middle">
+          <div class="display-inline">
+            <fieldset id="DivSys" class="hidden text-center no-border">
+              <img id="RbtIcon" class="img-128 display-inline" />
+              <div class="display-inline">
+                <h1>Air <span class="hidden m-5" id="RbtName">NAO</span></h1>
+                <span class="hidden m-5" id="RbtVersion">Version</span>
               </div>
             </fieldset>
           </div>
-          <div style="display:inline-block;">
-            <fieldset id="DivTts" style="display:none;text-align:center;border:none;">
+          <div class="display-inline">
+            <fieldset id="DivTts" class="hidden text-center no-border">
               <input type="text"
               cols="40" 
               rows="5" 
-              style="width:200px; height:50px;" 
+              class="input-200x50" 
               name="Text1" 
               id="RbtSay" 
               value="" />
             </fieldset>
           </div>
-          <fieldset id="DivPosture" style="display:none;text-align:center;border:none;">
+          <fieldset id="DivPosture" class="hidden text-center no-border">
             <button id="crouch" onclick="nao.posture.goToPosture('Crouch', 1.0);">
-              <img src="img/croutch.png" style="width:60px;height:60px;" />
+              <img src="img/croutch.png" class="img-60" />
               <div>Crouch<div>
             </button>
             <button id="stand "onclick="nao.posture.goToPosture('Stand', 1.0);">
-              <img src="img/stand.png" style="width:60px;height:60px;" />
+              <img src="img/stand.png" class="img-60" />
               <div>Stand</div>
             </button>
             <button id="sit" onclick="nao.posture.goToPosture('Sit', 1.0);">
-              <img src="img/sit.png" style="width:60px;height:60px;" />
+              <img src="img/sit.png" class="img-60" />
               <div>Sit</div>
             </button>
             <button id="relax" onclick="nao.posture.goToPosture('SitRelax', 1.0);">
-              <img src="img/relax.png" style="width:60px;height:60px;" />
+              <img src="img/relax.png" class="img-60" />
               <div>SitRelax</div>
             </button>
             <button id="lying" onclick="nao.posture.goToPosture('LyingBack', 1.0);">
-              <img src="img/back.png" style="width:60px;height:60px;" />
+              <img src="img/back.png" class="img-60" />
               <div>LyingBack</div>
             </button>
             <button id="belly" onclick="nao.posture.goToPosture('LyingBelly', 1.0);">
-              <img src="img/belly.png" style="width:60px;height:60px;" />
+              <img src="img/belly.png" class="img-60" />
               <div>LyingBelly</div>
             </button>
             <button id="standinit" onclick="nao.posture.goToPosture('StandInit', 1.0);">
-              <img src="img/stand-init.png" style="width:60px;height:60px;" />
+              <img src="img/stand-init.png" class="img-60" />
               <div>StandInit</div>
             </button>
             <button id="standzero" onclick="nao.posture.goToPosture('StandZero', 1.0);">
-              <img src="img/stand-zero.png" style="width:60px;height:60px;" />
+              <img src="img/stand-zero.png" class="img-60" />
               <div>StandZero</div>
             </button>
           </fieldset>
 
-          <fieldset id="DivExtra" style="text-align:center;border:none;">
+          <fieldset id="DivExtra" class="text-center no-border">
             <button id="stop" onclick="stopAll();">
               
               <div>Stop All</div>
@@ -122,98 +122,98 @@
             </button>
           </fieldset>
           
-          <fieldset id="DivMotion" style="display:none;text-align:center;border:none;">
-            <div style="display:inline-block;vertical-align:top;">
-              <button id="wakeup" onclick="nao.motion.wakeUp();" style="display:inline-block;vertical-align:top;">
-                <img src="img/waikup.png" style="width:60px;height:60px;" />
+          <fieldset id="DivMotion" class="hidden text-center no-border">
+            <div class="display-inline v-middle">
+              <button id="wakeup" onclick="nao.motion.wakeUp();" class="display-inline v-middle">
+                <img src="img/waikup.png" class="img-60" />
                 <div>Wake Up</div>
               </button>
               <br />
-              <button id="rest" onclick="nao.motion.rest();" style="display:inline-block;vertical-align:top;">
-                <img src="img/rest.png" style="width:60px;height:60px;" />
+              <button id="rest" onclick="nao.motion.rest();" class="display-inline v-middle">
+                <img src="img/rest.png" class="img-60" />
                 <div>Rest</div>
               </button>
             </div>
-            <div style="display:inline-block;vertical-align:top;">
+            <div class="display-inline v-middle">
               <button id="openhand" onclick="nao.motion.openHand('LHand');">
-                <img src="img/hand-left-open.png" style="width:60px;height:60px;" />
+                <img src="img/hand-left-open.png" class="img-60" />
                 <div>Open Hand</div>
               </button><br />
               <button id="closehand" onclick="nao.motion.closeHand('LHand');">
-                <img src="img/hand-left-close.png" style="width:60px;height:60px;" />
+                <img src="img/hand-left-close.png" class="img-60" />
                 <div>Close Hand</div>
               </button>
             </div>
-            <div style="display:inline-block;vertical-align:top;">
+            <div class="display-inline v-middle">
               <button id="turnleft" onclick="nao.motion.moveTo(0.0, 0.0, 0.26);">
-                <img src="img/turn-left.png" style="width:60px;height:60px;" />
+                <img src="img/turn-left.png" class="img-60" />
                 <div>turn left</div>
               </button>
               <button id="forward" onclick="nao.motion.moveTo(0.1, 0.0, 0.0);">
-                <img src="img/forward.png" style="width:60px;height:60px;" />
+                <img src="img/forward.png" class="img-60" />
                 <div>forward</div>
               </button>
               <button id="turnright" onclick="nao.motion.moveTo(0.0, 0.0, -0.26);">
-                <img src="img/turn-right.png" style="width:60px;height:60px;" />
+                <img src="img/turn-right.png" class="img-60" />
                 <div>turn right</div>
               </button>
               <br />
               <button id="left" onclick="nao.motion.moveTo(0.0, 0.1, 0.0);">
-                <img src="img/left.png" style="width:60px;height:60px;" />
+                <img src="img/left.png" class="img-60" />
                 <div>move left</div>
               </button>
               <button id="backward" onclick="nao.motion.moveTo(-0.1, 0.0, 0.0);">
-                <img src="img/backward.png" style="width:60px;height:60px;" />
+                <img src="img/backward.png" class="img-60" />
                 <div>backward</div>
               </button>
               <button id="right" onclick="nao.motion.moveTo(0.0, -0.1, 0.0);">
-                <img src="img/right.png" style="width:60px;height:60px;" />
+                <img src="img/right.png" class="img-60" />
                 <div>move right</div>
               </button>
             </div>
-            <div style="display:inline-block;vertical-align:top;">
+            <div class="display-inline v-middle">
               <button id="righthandopen" onclick="nao.motion.openHand('RHand');">
-                <img src="img/hand-right-open.png" style="width:60px;height:60px;" />
+                <img src="img/hand-right-open.png" class="img-60" />
                 <div>Open Hand</div>
               </button><br />
               <button id="righthandclose" onclick="nao.motion.closeHand('RHand');">
-                <img src="img/hand-right-close.png" style="width:60px;height:60px;" />
+                <img src="img/hand-right-close.png" class="img-60" />
                 <div>Close Hand</div>
               </button>
             </div>
-            <div style="display:inline-block;vertical-align:top;">
+            <div class="display-inline v-middle">
               <button id="shutdown" onclick="nao.system.shutdown();">
-                <img src="img/shutdown.png" style="width:60px;height:60px;" />
+                <img src="img/shutdown.png" class="img-60" />
                 <div>Shutdown</div>
               </button>
               <br />
               <button id="reboot" onclick="nao.system.reboot();">
-                <img src="img/reboot.png" style="width:60px;height:60px;" />
+                <img src="img/reboot.png" class="img-60" />
                 <div>Reboot</div>
               </button>
             </div>
           </fieldset>
         </div>
-        <div style="display:inline-block;vertical-align:top;">
-          <fieldset id="DivVideo" style="display:none;border:none;">
+        <div class="display-inline v-middle">
+          <fieldset id="DivVideo" class="hidden no-border">
             <button id="BtnVid" onclick="displayVideo();">
-              <img src="img/video.png" style="width:60px;height:60px;" />
+              <img src="img/video.png" class="img-60" />
               <div>Show Video</div>
             </button>
-            <div id="DivVid1" style="display:none;background-color:#999999;"><canvas id="myCanvas0" width="160" height="120"></canvas></div>
-            <div id="DivVid2" style="display:none;background-color:#999999;"><canvas id="myCanvas1" width="160" height="120"></canvas></div>
+            <div id="DivVid1" class="hidden bg-grey"><canvas id="myCanvas0" width="160" height="120"></canvas></div>
+            <div id="DivVid2" class="hidden bg-grey"><canvas id="myCanvas1" width="160" height="120"></canvas></div>
           </fieldset>
         </div>
-        <div style="display:inline-block;vertical-align:top;">
-          <fieldset id="DivLogs" style="display:none;border:none;">
+        <div class="display-inline v-middle">
+          <fieldset id="DivLogs" class="hidden no-border">
             <button id="BtnVid" onclick="jsnao.display_logs();">
-              <img src="img/logs.png" style="width:60px;height:60px;" />
+              <img src="img/logs.png" class="img-60" />
               <div>Show Logs</div>
             </button>
           </fieldset>
         </div>
-        <fieldset id="DivLogContainer" style="display:none;width:100%;max-height:300px;padding:0px;border:solid 1px #444444;border-radius:5px;overflow:auto;">
-          <legend id="LogLevel" onclick="jsnao.level_logs();" title="Click to change Logs Level" style="cursor:pointer;margin-left:10px;">Logger Level : INFO</legend>
+        <fieldset id="DivLogContainer" class="hidden">
+          <legend id="LogLevel" onclick="jsnao.level_logs();" title="Click to change Logs Level">Logger Level : INFO</legend>
           <div id="DivLogger"></div>
         </fieldset>
        </div>

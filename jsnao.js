@@ -95,13 +95,13 @@ var jsnao = {
     // If the Log Level is in the List
     if (jsnao.logLevels.hasOwnProperty(logData.level)) {
       var log_level = jsnao.logLevels[logData.level];
-      var spanLvl = $('<span style="color:'+log_level.color+';margin-left:5px;">['+log_level.label+']</span>');
-      var spanCat = $('<span style="color:#0094FF;margin-left:5px;">'+logData.category+' : </span>');
-      var spanMsg = $('<span style="color:#000000;margin-left:5px;">'+logData.message+'</span>');
-      var logLine=$('<div style="border-bottom: solid 1px #DCDCDC;"></div>');
-      logLine.append(spanLvl);
-      logLine.append(spanCat);
-      logLine.append(spanMsg);
+  var spanLvl = $('<span class="log-lvl">['+log_level.label+']</span>').css('color', log_level.color);
+  var spanCat = $('<span class="log-cat">'+logData.category+' : </span>');
+  var spanMsg = $('<span class="log-msg">'+logData.message+'</span>');
+  var logLine=$('<div class="log-line"></div>');
+  logLine.append(spanLvl);
+  logLine.append(spanCat);
+  logLine.append(spanMsg);
       $('#DivLogger').prepend(logLine);
     }
   },

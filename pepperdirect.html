@@ -22,21 +22,21 @@
         
 
        <div>
-        <div style="display:inline-block;vertical-align:top;">
-          <div style="display:inline-block;">
-            <fieldset id="DivSys" style="display:inline-block;text-align:center;border:none;">
-              <img id="photo" style="width:128px;height:128px;display:inline-block;" />
+        <div class="display-inline v-middle">
+          <div class="display-inline">
+            <fieldset id="DivSys" class="display-inline text-center no-border">
+              <img id="photo" class="img-128 display-inline" />
               <p>Tablet Image</p>
-              <input type="text" style="width:200px; height:50px;" name="Text1" id="image" value="" />
-              <div style="display:inline-block;">
-                <h1>Air <span style="display:none;margin:5px;padding:5px;" id="RbtName">NAO</span></h1>
-                <span style="display:none;margin:5px;padding:5px;" id="RbtVersion">Version</span>
+              <input type="text" class="input-200x50" name="Text1" id="image" value="" />
+              <div class="display-inline">
+                <h1>Air <span class="hidden m-5" id="RbtName">NAO</span></h1>
+                <span class="hidden m-5" id="RbtVersion">Version</span>
               </div>
             </fieldset>
           </div>
           
          
-          <fieldset id="DivPosture" style="display:inline-block;text-align:center;border:none;">
+          <fieldset id="DivPosture" class="display-inline text-center no-border">
             <button id="crouch" onclick="spin360();">
               
               <div>360<div>
@@ -66,12 +66,12 @@
               <div>StandInit</div>
             </button>
             <button id="standzero" onclick="posture.goToPosture('StandZero', 1.0);">
-              <img src="img/stand-zero.png" style="width:60px;height:60px;" />
+              <img src="img/stand-zero.png" class="img-60" />
               <div>StandZero</div>
             </button>
           </fieldset>
 
-          <fieldset id="DivExtra" style="text-align:center;border:none;">
+          <fieldset id="DivExtra" class="text-center no-border">
             <button id="stop" onclick="stopAll();">
               
               <div>Stop All</div>
@@ -125,8 +125,8 @@
           </fieldset>
           
         
-        <fieldset id="DivLogContainer" style="width:100%;max-height:300px;padding:0px;border:solid 1px #444444;border-radius:5px;overflow:auto;">
-          <legend id="LogLevel" onclick="jsnao.level_logs();" title="Click to change Logs Level" style="cursor:pointer;margin-left:10px;">Logger Level : INFO</legend>
+          <fieldset id="DivLogContainer">
+          <legend id="LogLevel" onclick="jsnao.level_logs();" title="Click to change Logs Level">Logger Level : INFO</legend>
           <div id="DivLogger"></div>
         </fieldset>
        </div>

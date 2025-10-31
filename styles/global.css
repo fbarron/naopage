@@ -19,7 +19,7 @@
   .reaction {
     color:orange;
   }
-  .
+  
   /* Dropdown button on hover & focus */
   .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
@@ -115,3 +115,140 @@
     width: 100%;
   }
 }
+
+  /* Body and layout */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 10px;
+  }
+
+  .top-texts {
+    display: flex;
+    gap: 1px;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+
+  .top-texts input {
+    width: 200px;
+    height: 50px;
+    border-radius: 1px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 18px;
+    padding-left: 4px;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    align-items: start;
+  }
+
+  fieldset {
+    border: none;
+  }
+
+  .button-grid {
+    display: grid;
+    gap: 5px;
+  }
+
+  button {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    height: 100px;
+  }
+
+  .dropdown {
+    text-align: center;
+  }
+
+  .dropdown button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+  }
+
+  /* button colours for left side (from pepper pages) */
+  #DivPosture button:nth-child(1) { background-color: #c25b4e; }
+  #DivPosture button:nth-child(2) { background-color: #5b84c2; }
+  #DivPosture button:nth-child(3) { background-color: #ac21cf; }
+  #DivPosture button:nth-child(4) { background-color: #e0b66b; }
+  #DivPosture button:nth-child(5) { background-color: #9177b9; }
+  #DivPosture button:nth-child(6) { background-color: #b5569f; }
+  #DivPosture button:nth-child(7) { background-color: #66c8a7; }
+  #DivPosture button:nth-child(8) { background-color: #b95e6b; }
+  #DivPosture button:nth-child(9) { background-color: #1bdc28; }
+  #DivPosture button:nth-child(10) { background-color: #c2b776; }
+  #DivPosture button:nth-child(11) { background-color: #5e1fbc; }
+  #DivPosture button:nth-child(12) { background-color: #cf7916; }
+  #DivPosture button:nth-child(13) { background-color: #302bc7; }
+  #DivPosture button:nth-child(14) { background-color: #4ab79a; }
+  #DivPosture button:nth-child(15) { background-color: #f2db06; }
+  #DivPosture button:nth-child(16) { background-color: #83d1a1; }
+  #DivPosture button:nth-child(17) { background-color: #c36717; }
+  #DivPosture button:nth-child(18) { background-color: #724ea7; }
+  #DivPosture button:nth-child(19) { background-color: #b3e284; }
+  #DivPosture button:nth-child(20) { background-color: #ca0000; }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .sidebar button {
+    height: 80px;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    width: 200px;
+  }
+
+  .sidebar .rest { background-color: #5b84c2; }
+  .sidebar .wake { background-color: #75b575; }
+  .sidebar .reboot { background-color: #e6c24d; }
+  .sidebar .off { background-color: #c25b4e; }
+
+  /* Utilities */
+  .img-60 { width: 60px; height: 60px; }
+  .img-128 { width: 128px; height: 128px; }
+  .display-inline { display: inline-block; }
+  .v-middle { vertical-align: middle; }
+  .no-border { border: none; }
+  .grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+  .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .slider-width-400 { width: 400px; }
+  .slidecontainer { width: 100%; }
+  .span-cols-5 { grid-column-end: span 5; }
+  .hidden { display: none !important; }
+  .text-center { text-align: center; }
+  .m-5 { margin: 5px; padding: 5px; }
+  .input-200x50 { width: 200px; height: 50px; }
+
+  .bg-grey { background-color: #999999; }
+
+  /* Log container styles */
+  #DivLogContainer { display:none; width:100%; max-height:300px; padding:0px; border:solid 1px #444444; border-radius:5px; overflow:auto; }
+  #LogLevel { cursor:pointer; margin-left:10px; }
+
+
+  /* Log line */
+  .log-lvl { margin-left: 5px; }
+  .log-cat { color: #0094FF; margin-left: 5px; }
+  .log-msg { color: #000000; margin-left: 5px; }
+  .log-line { border-bottom: solid 1px #DCDCDC; }
