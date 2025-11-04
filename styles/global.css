@@ -110,7 +110,7 @@
   }
 
   /* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 942px) {
   .column {
     width: 100%;
   }
@@ -254,3 +254,42 @@
   .log-cat { color: #0094FF; margin-left: 5px; }
   .log-msg { color: #000000; margin-left: 5px; }
   .log-line { border-bottom: solid 1px #DCDCDC; }
+
+  /* Mobile styling */
+  @media (max-width: 942px) { /* 942px is minimum width for everything to fit properly */
+    .top-texts {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .top-texts input {
+      max-width: 100%;
+    }
+  
+    .button-grid button {
+      height: 80px;
+      font-size: 12px;
+    }
+  
+    .sidebar button {
+      height: 60px;
+      font-size: 16px;
+    }
+
+    .main-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .grid-cols-4, .grid-cols-5 {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .slider, .slider-width-400 {
+      width: 100%;
+      max-width: none;
+    }
+
+    .img-60 { width: 48px; height: 48px; }
+    .img-128 { width: 96px; height: 96px; }
+  }
