@@ -30,102 +30,102 @@
   <fieldset id="DivPosture" class="button-grid grid-cols-5">
             <!-- 360 -->
             <button id="crouch" onclick="nao.spin360();">
-              <div>360<div>
+              <div class="buttonfont">360<div>
             </button>
 
             <!-- 180 -->
             <button id="stand "onclick="nao.spin180();">
-              <div>180</div>
+              <div class="buttonfont">180</div>
             </button>
 
             <!-- spin hands -->
             <button id="sit" onclick="nao.spinHandsup('Im Aliiiveeee')">
-              <div>Spin hands</div>
+              <div class="buttonfont">Spin hands</div>
             </button>
 
             <!-- explore -->
             <button id="relax" onclick="nao.explore(10)">
-              <div>Explore</div>
+              <div class="buttonfont">Explore</div>
             </button>
 
             <!-- stop explore -->
             <button id="lying" onclick="nao.stopExplore()">
-              <div>Stop Explore</div>
+              <div class="buttonfont">Stop Explore</div>
             </button>
 
             <!-- lying belly -->
             <button id="belly" onclick="nao.posture.goToPosture('LyingBelly', 1.0);">
-              <div>LyingBelly</div>
+              <div class="buttonfont">LyingBelly</div>
             </button>
 
             <!-- standinit -->
             <button id="standinit" onclick="nao.posture.goToPosture('StandInit', 1.0);">
-              <div>StandInit</div>
+              <div class="buttonfont">StandInit</div>
             </button>
 
             <!-- standzero -->
             <button id="standzero" onclick="nao.posture.goToPosture('StandZero', 1.0);">
-              <div>StandZero</div>
+              <div class="buttonfont">StandZero</div>
             </button>
             
             <!-- stop actions -->
             <button id="stop" onclick="stopAll();">
-              <div>Stop All</div>
+              <div class="buttonfont">Stop All</div>
             </button>
 
             <!-- solitary mode -->
             <button id="ALSol" onclick="nao.life.setState('solitary')">
-              <div>Autonomous on (Solitary)</div>
+              <div class="buttonfont">Autonomous on (Solitary)</div>
             </button>
 
             <!-- interactive mode -->
             <button id="AlInt" onclick="nao.life.setState('interactive')">
-              <div>Autonomous on (Interactive)</div>
+              <div class="buttonfont">Autonomous on (Interactive)</div>
             </button>
 
             <!-- lying back -->
             <button id="lying" onclick="nao.posture.goToPosture('LyingBack', 1.0);">
-              <div>LyingBack</div>
+              <div class="buttonfont">LyingBack</div>
             </button>
 
             <!-- wave right -->
             <button id="wave1" onclick="runBehaviour('dialog_move/animations/Others/Standing/Wave01');randomHello();">
-              <div>WaveRight<div>
+              <div class="buttonfont">WaveRight<div>
             </button>
             <button id="wave1" onclick="runBehaviour('dialog_move_hands/animations/Wave01');randomHello();">
              
             <!-- wave left -->
-              <div>WaveLeft</div>
+              <div class="buttonfont">WaveLeft</div>
             </button>
 
             <!-- handsup -->
             <button id="handshake" onclick="runBehaviour('dialog_move_hands/animations/OpenBothHands');runBehaviour('dialog_move_arms/animations/UpBothArms')">
-              <div>Handsup</div>
+              <div class="buttonfont">Handsup</div>
             </button>
            
             <!-- handshake -->
             <button id="handshake" onclick="runBehaviour('daps-bc/animations/success_rhandshake')">
-              <div>Handshake</div>
+              <div class="buttonfont">Handshake</div>
             </button>
             
             <!-- highfive -->
             <button id="handshake" onclick="runBehaviour('daps-bc/animations/init_rhighfive')">
-              <div>HighFive</div>
+              <div class="buttonfont">HighFive</div>
             </button>
             
             <!-- salute -->
             <button id="standzero" onclick="runBehaviour('animations/Stand/Gestures/Salute_1')">
-              <div>Salute</div>
+              <div class="buttonfont">Salute</div>
             </button>
 
             <!-- start random behaviour -->
             <button id="startrandom" onclick="startRandomBehaviour()">
-              <div>random</div>
+              <div class="buttonfont">random</div>
             </button>
 
             <!-- stop random behaviour -->
             <button id="stoprandom" onclick="stopRandomBehaviour()">
-              <div>Stop random</div>
+              <div class="buttonfont">Stop random</div>
             </button>
     </fieldset>
 
@@ -136,25 +136,25 @@
             <!-- open hand right -->
             <button id="righthandopen" onclick="nao.motion.openHand('RHand');">
                 <img src="img/hand-right-open.png" class="img-60" />
-                <div>Open Hand</div>
+                <div class="buttonfont">Open Hand</div>
               </button>
 
               <!-- close hand right -->
               <button id="righthandclose" onclick="nao.motion.closeHand('RHand');">
                 <img src="img/hand-right-close.png" class="img-60" />
-                <div>Close Hand</div>
+                <div class="buttonfont">Close Hand</div>
         </button>   
     <!-- pepper left hand controls -->
             <!-- open hand left -->
             <button id="openhand" onclick="nao.motion.openHand('LHand');">
                 <img src="img/hand-left-open.png" class="img-60" />
-                <div>Open Hand</div>
+                <div class="buttonfont">Open Hand</div>
               </button>
 
               <!-- close hand left -->
               <button id="closehand" onclick="nao.motion.closeHand('LHand');">
                 <img src="img/hand-left-close.png" class="img-60" />
-                <div>Close Hand</div>
+                <div class="buttonfont">Close Hand</div>
      </button>
 
      <!-- add a break here so the hand movements are on their own line -->
@@ -165,19 +165,19 @@
                 <!-- turn left -->
               <button id="turnleft" onclick="nao.move('turnleft');">
                 <img src="img/turn-left.png" class="img-60" />
-                <div>turn left</div>
+                <div class="buttonfont">turn left</div>
               </button>
 
               <!-- forward -->
               <button id="forward" onclick="nao.move('forward',speed);">
                 <img src="img/forward.png" class="img-60" />
-                <div>forward</div>
+                <div class="buttonfont">forward</div>
               </button>
 
               <!--  turn right -->
               <button id="turnright" onclick="nao.move('turnright');">
                 <img src="img/turn-right.png" class="img-60" />
-                <div>turn right</div>
+                <div class="buttonfont">turn right</div>
               </button>
 
              <!-- add a break here so the movement controls are easy to use -->
@@ -188,25 +188,25 @@
               <!-- left -->
               <button id="left" onclick="nao.move('left');">
                 <img src="img/left.png" class="img-60" />
-                <div>move left</div>
+                <div class="buttonfont">move left</div>
               </button>
 
               <!-- back -->
               <button id="backward" onclick="nao.move('backward');">
                 <img src="img/backward.png" class="img-60" />
-                <div>backward</div>
+                <div class="buttonfont">backward</div>
               </button>
 
               <!-- right -->
               <button id="right" onclick="nao.move('right');">
                 <img src="img/right.png" class="img-60" />
-                <div>move right</div>
+                <div class="buttonfont">move right</div>
               </button>
 
               <!-- stop -->
               <button id="stop" onclick="nao.move('stop');">
                 <img src="img\Stop.png" class="img-60" />
-                <div>Stop</div>
+                <div class="buttonfont">Stop</div>
               </button>
 
               <!-- slider for pepper move speed -->
