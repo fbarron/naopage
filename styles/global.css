@@ -193,7 +193,7 @@
   /* button colours for left side (from pepper pages) */
   #DivPosture button:nth-child(1) { background-color: #c25b4e; }
   #DivPosture button:nth-child(2) { background-color: #5b84c2; }
-  #DivPosture button:nth-child(3) { background-color: #ac21cf; }
+  #DivPosture button:nth-child(3) { background-color: #da6df6; }
   #DivPosture button:nth-child(4) { background-color: #e0b66b; }
   #DivPosture button:nth-child(5) { background-color: #9177b9; }
   #DivPosture button:nth-child(6) { background-color: #b5569f; }
@@ -201,16 +201,16 @@
   #DivPosture button:nth-child(8) { background-color: #b95e6b; }
   #DivPosture button:nth-child(9) { background-color: #1bdc28; }
   #DivPosture button:nth-child(10) { background-color: #c2b776; }
-  #DivPosture button:nth-child(11) { background-color: #5e1fbc; }
+  #DivPosture button:nth-child(11) { background-color: #9760e8; }
   #DivPosture button:nth-child(12) { background-color: #cf7916; }
-  #DivPosture button:nth-child(13) { background-color: #302bc7; }
+  #DivPosture button:nth-child(13) { background-color: #6a66ed; }
   #DivPosture button:nth-child(14) { background-color: #4ab79a; }
   #DivPosture button:nth-child(15) { background-color: #f2db06; }
   #DivPosture button:nth-child(16) { background-color: #83d1a1; }
-  #DivPosture button:nth-child(17) { background-color: #c36717; }
-  #DivPosture button:nth-child(18) { background-color: #724ea7; }
+  #DivPosture button:nth-child(17) { background-color: #dc995e; }
+  #DivPosture button:nth-child(18) { background-color: #a47ce0; }
   #DivPosture button:nth-child(19) { background-color: #b3e284; }
-  #DivPosture button:nth-child(20) { background-color: #ca0000; }
+  #DivPosture button:nth-child(20) { background-color: #e89494; }
 
   .sidebar {
     display: flex;
@@ -248,7 +248,7 @@
   .text-center { text-align: center; }
   .m-5 { margin: 5px; padding: 5px; }
   .input-200x50 { width: 200px; height: 50px; }
-  .buttonfont{ color: black}
+  .buttonfont{ color: rgb(7, 19, 36)}
   .bg-grey { background-color: #999999; }
 
   /* Log container styles */
