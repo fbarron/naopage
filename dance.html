@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dance Moves</title>
+
+    <!-- simple page style to keep it consistent with gestures.html -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* wrapper to center the main grid */
+        .dance-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px;
+        }
+
+        /* basic 2x3 grid for the main moves */
+        .dance-grid {
+            display: grid;
+            grid-template-columns: 150px 150px;
+            grid-template-rows: repeat(3, 150px);
+        }
+
+        /* tile style used for each block */
+        .tile {
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* colours just to make them different like in the example */
+        .t1 { background-color: #e57373; }   /* Explore */
+        .t2 { background-color: #ef9a9a; }   /* StandInit */
+        .t3 { background-color: #90caf9; }   /* 360 */
+        .t4 { background-color: #b2dfdb; }   /* Lying Back */
+        .t5 { background-color: #f48fb1; }   /* 180 */
+        .t6 { background-color: #ce93d8; }   /* Stand Zero */
+
+        /* separate tile on the right */
+        .side-tile {
+            width: 150px;
+            height: 150px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            background-color: #ffcc80;
+            margin-left: 40px;
+        }
+
+        /* small label under the grid */
+        .label {
+            text-align: center;
+            margin-top: 40px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- main layout with grid on the left and one tile on the right -->
+    <div class="dance-wrapper">
+
+        <!-- 2x3 grid for dance moves -->
+        <div class="dance-grid">
+
+            <!-- top row -->
+            <div class="tile t1">Explore</div>
+            <div class="tile t2">StandInit</div>
+
+            <!-- middle row -->
+            <div class="tile t3">360</div>
+            <div class="tile t4">Lying Back</div>
+
+            <!-- bottom row -->
+            <div class="tile t5">180</div>
+            <div class="tile t6">Stand Zero</div>
+
+        </div>
+
+        <!-- separate block on the right -->
+        <div class="side-tile">Lying Belly</div>
+
+    </div>
+
+    <!-- footer label below the layout -->
+    <p class="label">Dance Moves</p>
+
+</body>
+</html>
