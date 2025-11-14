@@ -262,6 +262,46 @@
   .log-msg { color: #000000; margin-left: 5px; }
   .log-line { border-bottom: solid 1px #DCDCDC; }
 
+    /* tablet page styling */
+  .button-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .button-row button {
+    min-width: 180px;
+    min-height: 180px;
+    font-size: 16px;
+    border-radius: 50%;
+    border:gray 2px solid;
+  }
+
+  .button-row button:nth-child(1){ background-color: #9b84c8; color: #071324;}
+  .button-row button:nth-child(2){ background-color: #f3dc8f; color: #071324;}
+  .button-row button:nth-child(3){ background-color: #c6e6c9; color: #071324;}
+  .button-row button:nth-child(4){ background-color: #e4a3a3; color: #071324;}
+
+  .centre-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .pepper-text {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    width: 50%;
+    height: 20%;
+    border:gray 2px solid;
+    background: #bcd4f2;
+  }
+
   /* Mobile styling */
   @media (max-width: 942px) { /* 942px is minimum width for everything to fit properly */
     .top-texts {
@@ -305,6 +345,4 @@
 
     .img-60 { width: 48px; height: 48px; }
     .img-128 { width: 96px; height: 96px; }
-
-    
   }

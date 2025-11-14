@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pepper tablet</title>
+    <meta name="description" content="Js NAO Control" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta http-equiv="content-language" content="en-US" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery.min.js"></script>
+    <script src="/libs/qi/2/qi.js"></script>
+    <script src="js/naocontrol.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+
+<body>
+    <div class="centre-buttons">
+        <div class="button-row" role="group" aria-label="Main controls">
+            <button id="btn-1" onclick="location.href='dance.html'">Dance moves</button>
+            <button id="btn-2" onclick="location.href='gestures.html'">Hand moves</button>
+            <button id="btn-3" onclick="startRandomBehaviour()">Random</button>
+            <button id="btn-4" onclick="stopAll()">Stop</button>
+        </div>
+        <input type="text" placeholder="Make pepper talk" class="pepper-text" />
+    </div>
+</body>
+
+</html>
