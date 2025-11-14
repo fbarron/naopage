@@ -69,8 +69,17 @@ $(document).ready(function () {
         }
     });
 
+    // These functions need buttons to be assigned to.
+    $('#').click(runBehaviour("animations/Stand/Waiting/MysticalPower_1"));
+    $('#').click(runBehaviour("animations/Stand/Waiting/Monster_1"));
+    $('#').click(runBehaviour("animations/Stand/Waiting/KungFu_1"));
+    $('#').click(runBehaviour("animations/Stand/Gestures/Wings_1"));
+    $('#').click(runBehaviour("animations/Stand/Emotions/Positive/Laugh_2"));
+    $('#').click(runBehaviour("animations/Stand/Waiting/MysticalPower_1"));
 
-
+    // reboot and shutdown functionality added.
+    $('#reboot').click(reboot());
+    $('#shutdown').click(shutdown());
 
 });
 
@@ -360,4 +369,12 @@ function randomHello() {
 
 function displayImage(image) {
     nao.tablet.showImage(image);
+}
+
+function reboot() {
+    nao.system.reboot();
+}
+
+function shutdown() {
+    nao.system.shutdown();
 }
