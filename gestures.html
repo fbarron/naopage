@@ -8,97 +8,91 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9">
   <meta http-equiv="content-language" content="en-US" />
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/jquery.min.js"></script>
-  <script src="/libs/qimessaging/2/qimessaging.js"></script>
-  <script src="js/maindirect.js"></script>
+  <script src="/libs/qi/2/qi.js"></script>
+  <script src="js/naocontrol.js"></script> 
+  <script src="js/main.js"></script>
   <link rel="stylesheet" href="styles/global.css">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* simple wrapper to keep the grid centered */
-        .gestures-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 80px;
-        }
-
-        /* basic 3x3 grid for the gesture buttons */
-        .gestures-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 150px);
-            grid-template-rows: repeat(3, 150px);
-        }
-
-        /* default tile style – nothing complicated */
-        .gesture-tile {
-            border: 1px solid #ccc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-weight: bold;
-            text-decoration: none;
-            color: #000;
-        }
-
-        /* just simple colour differences so tiles don't look the same */
-        .g1 { background-color: #d48ac2; }
-        .g2 { background-color: #9b87d8; }
-        .g3 { background-color: #7fb3e8; }
-        .g4 { background-color: #b7e4a9; }
-        .g5 { background-color: #ffe48a; }
-        .g6 { background-color: #c6a5e8; }
-        .g7 { background-color: #aec9ff; }
-
-        /* label under the grid, same style as on the example screenshot */
-        .page-label {
-            margin-top: 40px;
-            text-align: left;
-            margin-left: 80px;
-            color: #555;
-        }
-    </style>
-
 </head>
-
-<script>
-  console.log("loading page")
-  nao.tablet.loadUrl(pepperdirect.html);
-  nao.tablet.showWebview();
-</script>
 
 <body>
 
-    <!-- main wrapper to keep the grid centered on the page -->
-    <div class="gestures-wrapper">
-        
-        <!-- 3x3 grid with gesture buttons -->
-        <div class="gestures-grid">
+    <!-- main layout with grid on the left and one tile on the right -->
+    <div class="main-Grid">
 
-<!-- top row -->
-<div class="gesture-tile g1">Salute</div>
-<div class="gesture-tile g2">Wave right</div>
-<div class="gesture-tile g3">High Five</div>
+        <fieldset id="DivPosture" class="button-grid grid-cols-4">
 
-<!-- middle row -->
-<div class="gesture-tile g4">Spin Hands</div>
-<div class="gesture-tile g5">Handsup</div>
-<div class="gesture-tile g6">Hand shake</div>
+        <!-- top row -->
+            <!-- highfive -->
+            <button id="handshake" onclick="runBehaviour('daps-bc/animations/init_rhighfive')">
+              <div class="buttonfont">HighFive</div>
+            </button>
 
-<!-- bottom row -->
-<div class="gesture-tile g7">Wave Left</div>
+            <!-- salute -->
+            <button id="standzero" onclick="runBehaviour('animations/Stand/Gestures/Salute_1')">
+              <div class="buttonfont">Salute</div>
+            </button>
 
-<div></div> <!-- empty tile to match layout -->
+             <!-- handshake -->
+            <button id="handshake" onclick="runBehaviour('daps-bc/animations/success_rhandshake')">
+              <div class="buttonfont">Handshake</div>
+            </button>
+
+            <!-- handsup -->
+            <button id="handshake" onclick="runBehaviour('dialog_move_hands/animations/OpenBothHands');runBehaviour('dialog_move_arms/animations/UpBothArms')">
+              <div class="buttonfont">Handsup</div>
+            </button>
+
+            <!-- wave left -->
+            <button id="wave1" onclick="runBehaviour('dialog_move_hands/animations/Wave01');randomHello();">
+              <div class="buttonfont">WaveLeft</div>
+            </button>
+
+            <!-- wave right -->
+            <button id="wave1" onclick="runBehaviour('dialog_move/animations/Others/Standing/Wave01');randomHello();">
+              <div class="buttonfont">WaveRight<div>
+            </button>
+
+            <!-- spin hands -->
+            <button id="sit" onclick="nao.spinHandsup('Im Aliiiveeee')">
+              <div class="buttonfont">Spin hands</div>
+            </button>
+
+             <!-- air guitar -->
+            <button id="standzero" onclick="runBehaviour('animations/Stand/Waiting/AirGuitar_1')">
+              <div class="buttonfont">Air Guitar</div>
+            </button>
+
+             <!-- cross arms -->
+            <button id="standzero" onclick="runBehaviour('dialog_move/animations/Others/Standing/Impossible_CrossArms')">
+              <div class="buttonfont">Cross Arms</div>
+            </button>
+
+             <!-- Stretch -->
+            <button id="standzero" onclick="runBehaviour('animations/Stand/Waiting/Stretch_1')">
+              <div class="buttonfont">Stretch</div>
+            </button>
+
+             <!-- Show Muscles -->
+            <button id="standzero" onclick="runBehaviour('animations/Stand/Waiting/ShowMuscles_3')">
+              <div class="buttonfont">Show Muscles</div>
+            </button>
+
+             <!-- Scratch Bottom -->
+            <button id="standzero" onclick="runBehaviour('animations/Stand/Waiting/ScratchBottom_1')">
+              <div class="buttonfont">Scratch Bottom</div>
+            </button>
 
         </div>
-    </div>
+        </fieldset>
 
-    <!-- small label at the bottom, same as on the screenshot -->
-    <p class="page-label">Interactive V2</p>
+        <!-- Go Back (make this go back to)-->
+            <button id="" onclick="">
+              <div class="buttonfont">Back</div>
+            </button>
+
+    </div>
 
 </body>
 
